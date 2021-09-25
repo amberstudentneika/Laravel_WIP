@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,9 +37,20 @@ Route::post("/register/store",[RegisterController::class,"store"]);
 Route::post("/logout",[LogoutController::class,"logout"])->name("Logout");
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard");
+Route::get("/admindashboard",[DashboardController::class,"admin_index"])->name("AdminDashboard");
+
 
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
+
+//courses
+Route::get("/course/option",[CourseController::class,"OptionCourse"])->name("Option-Course");
+Route::get("/course/add",[CourseController::class,"AddCourse"])->name("Add-Course");
+
+//course type
+Route::get("/coursetype/option",[CourseController::class,"OptionCourseType"])->name("Option-CourseType");
+Route::get("/coursetype/option/add",[CourseController::class,"AddCourseType"])->name("Add-CourseType");
+Route::post("/coursetype/option/add/store",[CourseController::class,"StoreCourseType"])->name("Store-CourseType");
 
 
 
