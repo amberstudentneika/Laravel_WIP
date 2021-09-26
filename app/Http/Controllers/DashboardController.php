@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -18,4 +18,12 @@ class DashboardController extends Controller
     public function admin_index(){
       return view("admin.index");
 }
+  public function dash(){
+    if(Auth::User()->is_admin =='0'){
+        return redirect()->route('Dashboard');
+    }
+    else{
+        return redirect()->route('AdminDashboard');
+    }
+  }
 }
