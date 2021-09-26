@@ -27,7 +27,7 @@
                             <h1 class="text-white text-4xl font-black">View Category</h1>
                             <p class="text-white text-opacity-50 mt-2">View all existing course categories</p>
                         </div>
-                        <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-green-400 hover:shadow-xl duration-200 hover:bg-green-800">View</button>
+                        <a href="{{route('View-CourseType')}}"><button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-green-400 hover:shadow-xl duration-200 hover:bg-green-800">View</button></a>
                     </div>
 
                     <div class="py-12 sm:py-12 md:py-6 lg:py-6 xl:py-6 px-8 w-full md:max-w-min sm:w-full bg-white z-30">

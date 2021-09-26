@@ -51,6 +51,7 @@ Route::get("/course/add",[CourseController::class,"AddCourse"])->name("Add-Cours
 Route::get("/coursetype/option",[CourseController::class,"OptionCourseType"])->name("Option-CourseType");
 Route::get("/coursetype/option/add",[CourseController::class,"AddCourseType"])->name("Add-CourseType");
 Route::post("/coursetype/option/add/store",[CourseController::class,"StoreCourseType"])->name("Store-CourseType");
+Route::get("/coursetype/option/view",[CourseController::class,"ViewCourseType"])->name("View-CourseType");
 
 
 
