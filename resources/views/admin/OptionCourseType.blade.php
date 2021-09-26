@@ -35,7 +35,7 @@
                             <h1 class="text-gray-700 text-4xl font-black">Update Category</h1>
                             <p class="text-gray-500  mt-2">Update an existing category</p>
                         </div>
-                        <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800">Update</button>
+                        <a href="{{route('View-Update-CourseType')}}"><button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800">Update</button></a>
                     </div>
 
                 </div>
