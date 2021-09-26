@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Usercoursecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,5 +69,10 @@ Route::post("/coursetype/option/update/store",[CourseController::class,"StoreUpd
 
 Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
 
+//Guest
+Route::get("/guest/course",[Usercoursecontroller::class,"guestcourses"])->name("guestcourses");
+//students
+Route::get("/student/studentcourse",[Usercoursecontroller::class,"usercourses"])->name("studentcourses");
+Route::post("/student/studentcourse",[Usercoursecontroller::class,"applytocourse"])->name("apply");
 
 

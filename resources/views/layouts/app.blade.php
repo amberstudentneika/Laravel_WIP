@@ -11,15 +11,15 @@
 <body>
 
 <nav class="p-4 text-black border bg-white w-screen flex justify-between mb-6 items-center">
-    <ul class="flex items-center">
-        <li><a href="#" class="p-2">Home</a></li>
-        <li><a href="{{route('Dashboard')}}" class="p-2">Dashboard</a></li>
-        <li><a href="#" class="p-2">Course Selection</a></li>
-    </ul>
+    @auth
+        <ul class="flex items-center">
+            <li><a href="{{route('Dashboard')}}" class="p-2">Dashboard</a></li>
+            <li><a href="{{route('studentcourses')}}" class="p-2">Course Selection</a></li>
+        </ul>
 
     <ul class="flex items-center">
 
-        @auth
+
             <li><a href="{{route('Profile')}}" class="p-2">{{Auth::user()->name}}</a></li>
             <li>
                 <form action="{{route('Logout')}}" method="post">
@@ -30,11 +30,16 @@
             </li>
 
         @else
-        <li><a href="{{route("Login")}}" class="p-2">Login</a></li>
-        <li><a href="{{route('Register')}}" class="p-2">Register</a></li>
-
+            <ul class="flex items-center">
+                <li><a href="/" class="p-2">Home</a></li>
+                <li><a href="{{route("guestcourses")}}" class="p-2">Course Selection</a></li>
+            </ul>
+            <ul class="flex items-center">
+                <li><a href="{{route("Login")}}" class="p-2">Login</a></li>
+                <li><a href="{{route('Register')}}" class="p-2">Register</a></li>
         @endauth
 
+    </ul>
     </ul>
 </nav>
 
