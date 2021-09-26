@@ -41,7 +41,7 @@
                 <a href="{{route('Option-Course')}}" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">Course</a>
             </li>
             <li>
-                <a href="" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">..</a>
+                <a href="{{route('Option-Application')}}" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">Application</a>
             </li>
 {{--            --}}
 {{--            <li>--}}

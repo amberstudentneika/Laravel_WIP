@@ -8,6 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Usercoursecontroller;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,6 +65,9 @@ Route::get("/coursetype/option/view/update",[CourseController::class,"ViewUpdate
 Route::get("/coursetype/option/update/{id?}",[CourseController::class,"UpdateCourseType"])->name("Update-CourseType");
 Route::post("/coursetype/option/update/store",[CourseController::class,"StoreUpdateCourseType"])->name("Store-Update-CourseType");
 
+//course application
+Route::get("/application/option/view",[ApplicationController::class,"OptionApplication"])->name("Option-Application");
+Route::get("/application/view",[ApplicationController::class,"ViewApplication"])->name("View-Application");
 
 // Admin
 
