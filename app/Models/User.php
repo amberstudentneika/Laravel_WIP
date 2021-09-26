@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'tele'
+        'tele',
+        'is_admin'
     ];
 
     /**
@@ -42,4 +43,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function studentselections(){
+        return $this->hasMany(StudentSelection::class,'user_id');
+    }
 }
