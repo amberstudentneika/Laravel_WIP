@@ -47,9 +47,10 @@
                            Update
                         </button>
                     </div>
-
                 </form>
-                @if (session()->has('Success'))
+                <a href="{{url('/coursetype/option/view')}}"> <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" > Return to view </button></a>
+
+            @if (session()->has('Success'))
                     <div class=" bg-green-500 p-4 rounded-lg text-white text-center mb-6">
                         {{session('Success')}}
                     </div>

@@ -13,7 +13,7 @@
 <div class="flex flex-wrap bg-gray-100 w-full h-screen">
     <div class="w-3/12 bg-white rounded p-3 shadow-lg">
         <div class="flex items-center space-x-4 p-2 mb-5">
-            <img class="h-12 rounded-full" src="\images\profile.jpg" alt="Pro Pic">
+{{--            <img class="h-12 rounded-full" src="\images\profile.jpg" alt="Pro Pic">--}}
             <div>
                 <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">{{Auth::User()->name}}</h4>
                <span class="text-sm tracking-wide flex items-center space-x-1">

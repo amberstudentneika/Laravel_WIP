@@ -13,13 +13,15 @@ class CourseController extends Controller
     public function OptionCourse(){
         return view('admin.OptionCourse');
     }
+
     public function AddCourse(){
         $data = TypesOfCourse::all();
         return view('admin.AddCourse',compact('data'));
     }
+
     public function StoreCourse(Request $request){
         $this->validate($request,[
-            'name' => 'required',
+            'name' => 'required|unique:courses,course_name',
             'courseid' => 'required',
         ]);
 
@@ -31,13 +33,13 @@ class CourseController extends Controller
     }
 
     public function ViewCourse(){
-        $data=Course::all();
+        $data=Course::orderby('course_name','asc')->get();
         return view('admin.ViewCourse',compact('data'));
     }
 
     public function ViewUpdateCourse(){
-    $data=Course::all();
-    return view('admin.ViewUpdateCourse',compact('data'));
+        $data=Course::all();
+        return view('admin.ViewUpdateCourse',compact('data'));
 }
 
     public function UpdateCourse($id){
@@ -47,7 +49,7 @@ class CourseController extends Controller
 
     public function StoreUpdateCourse(Request $request){
         $this->validate($request,[
-            'coursename' => 'required',
+            'coursename' => 'required|unique:courses,course_name',
             'courseid' => 'required',
         ]);
 
@@ -73,7 +75,7 @@ class CourseController extends Controller
 
     public function StoreCourseType(Request $request){
         $this->validate($request,[
-            'type' => 'required',
+            'type' => 'required|unique:types_of_courses,course_type',
             'info' => 'required',
         ]);
 
@@ -86,7 +88,7 @@ class CourseController extends Controller
     }
 
     public function ViewCourseType(){
-        $data=TypesOfCourse::all();
+        $data=TypesOfCourse::orderby('course_type','asc')->get();
         return view('admin.ViewCourseType',compact('data'));
     }
     public function ViewUpdateCourseType(){
@@ -101,7 +103,7 @@ class CourseController extends Controller
     public function StoreUpdateCourseType(Request $request){
         $this->validate($request,[
             'type' => 'required',
-            'info' => 'required',
+            'info' => 'required|max:100|min:10',
         ]);
 
         TypesOfCourse::find($request->id)->update([
