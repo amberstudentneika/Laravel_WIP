@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="w-9/12">
-
+        <div class="w-full h-screen bg-gray-800">
         <div class="p-4 text-gray-500"> {{-- background --}}
             <div class="w-full max-w-xs">
                 <form method="post" action="{{route('Store-Course')}}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -37,6 +37,9 @@
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
                             Add Course
                         </button>
+                        <button type="reset" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+                            Clear Fields
+                        </button>
                     </div>
 
                 </form>
@@ -47,5 +50,5 @@
                 @endif
         </div>
     </div>
-
+        </div>
 @endsection

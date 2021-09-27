@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="w-9/12">
-
+        <div class="w-full h-screen bg-gray-800">
         <div class="p-4 text-gray-500"> {{-- background --}}
             <div class="w-full max-w-xs">
                 @if (session()->has('course_status'))
@@ -48,10 +48,13 @@
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Add
                         </button>
+                        <button type="reset" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+                            Clear Fields
+                        </button>
                     </div>
 
                 </form>
         </div>
     </div>
-
+        </div>
 @endsection

@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="w-9/12">
-
+        <div class="w-full h-screen bg-gray-800 flex justify-center items-center">
         <div class="p-4 text-gray-500"> {{-- background --}}
 
         <!-- component -->
@@ -43,6 +43,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 
 @endsection

@@ -7,13 +7,14 @@
 @section('content')
 
     <div class="w-9/12">
-
+        <div class="w-full h-screen bg-gray-800">
         <div class="p-4 text-gray-500"> {{-- background --}}
 
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <h1 class="px-6 py-3 text-center text-xs font-medium text-gray-400 uppercase tracking-wider">Application List</h1>
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                 <tr>
@@ -44,16 +45,16 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-500">{{"id stuff"}}</div>
+                                        <div class="text-sm text-gray-500">{{$info->course_id}}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-500">{{"Sept"}}</div>
+                                        <div class="text-sm text-gray-500">{{$info->enroll_dt}}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-500">{{"Approve"}}</div>
+                                        <div class="text-sm text-gray-500"> <a href="{{url('/application/view/approve/'.$info->id)}}">Approve</a> </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-500">{{"Deny"}}</div>
+                                        <div class="text-sm text-gray-500"> <a href="{{url('/application/view/deny/'.$info->id)}}">Deny</a> </div>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -67,5 +68,6 @@
 
             </div>
         </div>
+    </div>
 
 @endsection

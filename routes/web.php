@@ -68,6 +68,12 @@ Route::post("/coursetype/option/update/store",[CourseController::class,"StoreUpd
 //course application
 Route::get("/application/option/view",[ApplicationController::class,"OptionApplication"])->name("Option-Application");
 Route::get("/application/view",[ApplicationController::class,"ViewApplication"])->name("View-Application");
+Route::get("/application/view/approve/{id?}",[ApplicationController::class,"ApproveCourse"])->name("Approve-Application");
+Route::get("/application/view/deny/{id?}",[ApplicationController::class,"DenyCourse"])->name("Deny-Application");
+Route::get("/application/view/approved",[ApplicationController::class,"ViewApprovedApplication"])->name("View-Approved-Application");
+Route::get("/application/view/denied",[ApplicationController::class,"ViewDeniedApplication"])->name("View-Denied-Application");
+
+
 
 // Admin
 

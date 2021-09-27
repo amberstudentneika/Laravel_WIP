@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="p-4 text-black border bg-white w-screen flex justify-between mb-6 items-center">
+<nav class="p-4 text-black border bg-white flex justify-between items-center">
     @auth
         <ul class="flex items-center">
             <li><a href="{{route('Dashboard')}}" class="p-2">Dashboard</a></li>
@@ -20,7 +20,7 @@
     <ul class="flex items-center">
 
 
-            <li><a href="{{route('Profile')}}" class="p-2">{{Auth::user()->name}}</a></li>
+            <li><a href="{{route('Profile')}}" class="p-2">Hi {{ucfirst(Auth::user()->name)}}</a></li>
             <li>
                 <form action="{{route('Logout')}}" method="post">
                     @csrf

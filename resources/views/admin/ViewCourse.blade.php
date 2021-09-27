@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="w-9/12">
-
+        <div class="w-full h-screen bg-gray-800">
         <div class="p-4 text-gray-500"> {{-- background --}}
 
             <div class="flex flex-col">
@@ -52,5 +52,5 @@
 
             </div>
         </div>
-
+    </div>
 @endsection
