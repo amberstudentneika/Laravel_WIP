@@ -2,67 +2,72 @@
 
 
 @section("content")
-
-    <div class="flex justify-center">
-
-        <div class="w-4/12 bg-gray-200 rounded-lg shadow-2xl">
-
-            <form method="post" action="{{url('/register/store')}}">
-                @csrf
-                <div class="mb-4 ">
-
+    <!-- component -->
+    <div class="min-h-screen bg-gray-800 flex justify-center items-center">
+        @if (session()->has('login_status'))
+            <div class=" bg-red-500 p-4 rounded-lg text-white text-center mb-6">
+                {{session('login_status')}}
+            </div>
+        @endif
+        <form method="post" action="{{url('/register/store')}}">
+            @csrf
+            <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+                <div>
+                    <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Create An Account</h1>
+                    <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Create an
+                        account to begin applying for any of our courses!</p>
+                </div>
+                <div class="space-y-4">
                     <label class="sr-only" for="name"> Name </label>
-                    <input type="text" placeholder="Enter Name" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('name') border-red-700 @enderror" name="name">
+                    <input name="name" type="text" placeholder="Enter Name" class=" @error('name') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("name")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
-                    <label class="sr-only" for="name"> Email </label>
-                    <input type="email" placeholder="Enter Email" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('email') border-red-700 @enderror" name="email">
+                    <input name="email" type="text" placeholder="Enter Email" class="@error('email') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("email")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
                     <label class="sr-only" for="tele"> Telephone Number </label>
-                    <input type="tel" value="000-0000-000" placeholder="Enter Telephone Number" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('tele') border-red-700 @enderror" name="tele">
+                    <input name="tele" type="tel" value="000-0000-000" placeholder="Enter Telephone Number" class="@error('tele') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("tele")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
                     <label class="sr-only" for="password">Password </label>
-                    <input type="password" placeholder="Enter Password" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('password') border-red-700 @enderror" name="password">
+                    <input name="password" type="password" placeholder="Enter Password" class="@error('password') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("password")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
                     <label class="sr-only" for="password_confirmation"> Verify Password </label>
-                    <input type="password" placeholder="Verify Password" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 " name="password_confirmation">
+                    <input name="password_confirmation" type="password" placeholder="Verify Password"  class="@error('password') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                    @error("password")
+                    <div class="text-red-700 mt-2 text-sm">
+                        {{$message}}
+                    </div>
+                    @enderror
+
                 </div>
-
-                <div>
-                    <button type="submit" class="bg-blue-500 text-white p-4 w-full rounded-md shadow-2xl">Register</button>
+                <div class="text-center mt-6">
+                    <button type="submit" class="py-3 w-64 text-xl text-white bg-gray-800 rounded-2xl">Create Account</button>
+                    <p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"> <a href="{{url('/login')}}">Sign In</a> </span>
+                    </p>
                 </div>
+            </div>
+</form>
 
-            </form>
-
-        </div>
-
-    </div>
 
 @endsection
+
+
+

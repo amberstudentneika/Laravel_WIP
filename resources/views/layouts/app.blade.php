@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <nav class="p-4 text-black border bg-white w-screen flex justify-between mb-6 items-center">
     @auth
     <ul class="flex items-center">
@@ -20,6 +21,19 @@
     <ul class="flex items-center">
 
             <li><a href="{{route('Profile')}}" class="p-2">{{Auth::user()->name}}</a></li>
+=======
+<nav class="p-4 text-black border bg-white flex justify-between items-center">
+    @auth
+        <ul class="flex items-center">
+            <li><a href="{{route('Dashboard')}}" class="p-2">Dashboard</a></li>
+            <li><a href="{{route('studentcourses')}}" class="p-2">Course Selection</a></li>
+        </ul>
+
+    <ul class="flex items-center">
+
+
+            <li><a href="{{route('Profile')}}" class="p-2">Hi {{ucfirst(Auth::user()->name)}}</a></li>
+>>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
             <li>
                 <form action="{{route('Logout')}}" method="post">
                     @csrf
@@ -29,6 +43,7 @@
             </li>
 
         @else
+<<<<<<< HEAD
         <ul class="flex items-center">
               <li><a href="/" class="p-2">Home</a></li>
               <li><a href="{{route("guestcourses")}}" class="p-2">Course Selection</a></li>
@@ -38,6 +53,19 @@
             <li><a href="{{route('Register')}}" class="p-2">Register</a></li>
         @endauth
       </ul>
+=======
+            <ul class="flex items-center">
+                <li><a href="/" class="p-2">Home</a></li>
+                <li><a href="{{route("guestcourses")}}" class="p-2">Course Selection</a></li>
+            </ul>
+            <ul class="flex items-center">
+                <li><a href="{{route("Login")}}" class="p-2">Login</a></li>
+                <li><a href="{{route('Register')}}" class="p-2">Register</a></li>
+        @endauth
+
+    </ul>
+    </ul>
+>>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
 </nav>
 
 @yield("content")

@@ -1,71 +1,52 @@
 @extends("layouts.app")
 
-@section("page_title")
-    Laravel Wip - User Profile
-@endsection
 
 @section("content")
+    <!-- component -->
+    <div class="min-h-screen bg-gray-800 flex justify-center items-center">
 
-
-
-    <div class="flex justify-center">
-
-
-        <div class="w-4/12 bg-gray-200 rounded-lg shadow-2xl">
-
-            <h1 class="text-4xl font-bold text-center">Update Profile</h1>
-            <h3 class="text-md text-center mb-2">Use the form below to edit your profile</h3>
-
-
-        @if (session()->has('update_status'))
-                <div class=" bg-green-500 p-4 rounded-lg text-white text-center mb-6">
-                    {{session('update_status')}}
+        <form method="post" action="{{route('On-Update')}}">
+            @csrf
+            <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+                <div>
+                    <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Update Profile</h1>
+                    <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Use form below to update your profile.</p>
                 </div>
-            @endif
-
-            <form method="post" action="{{route('On-Update')}}">
-                @csrf
-                <div class="mb-4 ">
-
+                <div class="space-y-4">
                     <label class="sr-only" for="name"> Name </label>
-                    <input type="text" value="{{$userInfo->name}}" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('name') border-red-700 @enderror" name="name">
+                    <input name="name" type="text" value="{{$userInfo->name}}"  class=" @error('name') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("name")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
-                    <label class="sr-only" for="name"> Email </label>
-                    <input disabled type="email" value="{{$userInfo->email}}" class="bg-gray-300 p-4 w-full rounded-md border-2 border-gray-400 @error('email') border-red-700 @enderror" name="email">
+                    <input name="email" disabled type="email" value="{{$userInfo->email}}"  class="@error('email') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("email")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
-                </div>
 
-                <div class="mb-4">
                     <label class="sr-only" for="tele"> Telephone Number </label>
-                    <input type="tel" value="{{$userInfo->tele}}" class="bg-white p-4 w-full rounded-md border-2 border-gray-400 @error('tele') border-red-700 @enderror" name="tele">
+                    <input name="tele" type="tel" value="{{$userInfo->tele}}" placeholder="Enter Telephone Number" class="@error('tele') border-red-700 @enderror block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
                     @error("tele")
                     <div class="text-red-700 mt-2 text-sm">
                         {{$message}}
                     </div>
                     @enderror
+
                 </div>
-
-
-
-
-                <div>
-                    <button type="submit" class="bg-blue-500 text-white p-4 w-full rounded-md shadow-2xl">Update</button>
+                <div class="text-center mt-6">
+                    <button type="submit" class="py-3 w-64 text-xl text-white bg-gray-800 rounded-2xl">Update Account</button>
                 </div>
+            </div>
+            @if (session()->has('update_status'))
+                <div class=" bg-green-500 p-4 rounded-lg text-white text-center mb-6">
+                    {{session('update_status')}}
+                </div>
+            @endif
+        </form>
 
-            </form>
 
-        </div>
-
-    </div>
 @endsection

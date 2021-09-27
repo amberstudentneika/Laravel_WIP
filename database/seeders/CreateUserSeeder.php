@@ -17,8 +17,8 @@ class CreateUserSeeder extends Seeder
         //Creating Admin User
         $admin = [
             [
-                'name' => 'Amy Wong',
-                'email' => 'awong@school.com',
+                'name' => 'Neika Lewis',
+                'email' => 'nlewis@elagi.edu.jm',
                 'password' => bcrypt('password'),
                 'tele' => '876-290-00243',
                 'is_admin' => '1'

@@ -8,6 +8,10 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Usercoursecontroller;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\ApplicationController;
+>>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +43,7 @@ Route::post("/logout",[LogoutController::class,"logout"])->name("Logout");
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard");
 Route::get("/admindashboard",[DashboardController::class,"admin_index"])->name("AdminDashboard");
+Route::get("/dash",[DashboardController::class,"dash"])->name("Dash");
 
 
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
@@ -46,13 +51,30 @@ Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->n
 
 //courses
 Route::get("/course/option",[CourseController::class,"OptionCourse"])->name("Option-Course");
-Route::get("/course/add",[CourseController::class,"AddCourse"])->name("Add-Course");
+Route::get("/course/option/add",[CourseController::class,"AddCourse"])->name("Add-Course");
+Route::post("/course/option/add/store",[CourseController::class,"StoreCourse"])->name("Store-Course");
+Route::get("/course/option/view",[CourseController::class,"ViewCourse"])->name("View-Course");
+Route::get("/course/option/view/update",[CourseController::class,"ViewUpdateCourse"])->name("View-Update-Course");
+Route::get("/course/option/update/{id?}",[CourseController::class,"UpdateCourse"])->name("Update-Course");
+Route::post( "/course/option/update/store",[CourseController::class,"StoreUpdateCourse"])->name("Store-Update-Course");
+
 
 //course type
 Route::get("/coursetype/option",[CourseController::class,"OptionCourseType"])->name("Option-CourseType");
 Route::get("/coursetype/option/add",[CourseController::class,"AddCourseType"])->name("Add-CourseType");
 Route::post("/coursetype/option/add/store",[CourseController::class,"StoreCourseType"])->name("Store-CourseType");
 Route::get("/coursetype/option/view",[CourseController::class,"ViewCourseType"])->name("View-CourseType");
+Route::get("/coursetype/option/view/update",[CourseController::class,"ViewUpdateCourseType"])->name("View-Update-CourseType");
+Route::get("/coursetype/option/update/{id?}",[CourseController::class,"UpdateCourseType"])->name("Update-CourseType");
+Route::post("/coursetype/option/update/store",[CourseController::class,"StoreUpdateCourseType"])->name("Store-Update-CourseType");
+
+//course application
+Route::get("/application/option/view",[ApplicationController::class,"OptionApplication"])->name("Option-Application");
+Route::get("/application/view",[ApplicationController::class,"ViewApplication"])->name("View-Application");
+Route::get("/application/view/approve/{id?}",[ApplicationController::class,"ApproveCourse"])->name("Approve-Application");
+Route::get("/application/view/deny/{id?}",[ApplicationController::class,"DenyCourse"])->name("Deny-Application");
+Route::get("/application/view/approved",[ApplicationController::class,"ViewApprovedApplication"])->name("View-Approved-Application");
+Route::get("/application/view/denied",[ApplicationController::class,"ViewDeniedApplication"])->name("View-Denied-Application");
 
 
 
@@ -65,3 +87,8 @@ Route::get("/guest/course",[Usercoursecontroller::class,"guestcourses"])->name("
 //students
 Route::get("/student/studentcourse",[Usercoursecontroller::class,"usercourses"])->name("studentcourses");
 Route::post("/student/studentcourse",[Usercoursecontroller::class,"applytocourse"])->name("apply");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
