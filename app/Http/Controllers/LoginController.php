@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect()->route('Dashboard');
             }
             else{
-            return redirect()->route('AdminDashboard');
+            return redirect()->route('Option-Application');
             }
         }
 

@@ -8,10 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Usercoursecontroller;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\ApplicationController;
->>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +25,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
-
 
 Route::get("/login",[LoginController::class,"index"])->name("Login");
 Route::post("/log",[LoginController::class,"login"])->name("On-Login");
@@ -87,8 +82,3 @@ Route::get("/guest/course",[Usercoursecontroller::class,"guestcourses"])->name("
 //students
 Route::get("/student/studentcourse",[Usercoursecontroller::class,"usercourses"])->name("studentcourses");
 Route::post("/student/studentcourse",[Usercoursecontroller::class,"applytocourse"])->name("apply");
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7b4ba215ec40e461174ba91cb1acdc01d6c6ea7c
