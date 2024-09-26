@@ -26,8 +26,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-
 Route::get("/login",[LoginController::class,"index"])->name("Login");
 Route::post("/log",[LoginController::class,"login"])->name("On-Login");
 
@@ -84,5 +82,3 @@ Route::get("/guest/course",[Usercoursecontroller::class,"guestcourses"])->name("
 //students
 Route::get("/student/studentcourse",[Usercoursecontroller::class,"usercourses"])->name("studentcourses");
 Route::post("/student/studentcourse",[Usercoursecontroller::class,"applytocourse"])->name("apply");
-
-

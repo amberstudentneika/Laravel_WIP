@@ -1,12 +1,10 @@
 @extends('layouts.app')
-
 @section("page_title")
     Laravel Wip-Admin Page
 @endsection
 
 @section('content')
-
-    <h1 class="text-6xl text-gray-800 text-center">Available Courses</h1>
+  <h1 class="text-6xl text-gray-800 text-center">Available Courses</h1>
     <div class="md:px-32 py-8 w-full">
         <div class="shadow overflow-hidden rounded border-b border-gray-200">
             <table class="min-w-full bg-white">
@@ -25,10 +23,10 @@
                         <td class="w-1/3 text-left py-3 px-4">{{$course['course_type']}}</td>
                         <td class="text-left py-3 px-4"> {{$course['desc']}}</td>
                         <td class="text-left py-3 px-4">
-                            <form class="" action="{{route('apply')}}" method="post">
+                            <form class="" action="{{route('Login')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="course" value="{{$course['id']}}">
-                                <button type="submit" name="button" class="btn btn-primary">Apply</button>
+                                <a href="/login"></a><button type="button" name="button" class="btn btn-primary">Apply</button>
                             </form>
                         </td>
                     </tr>
@@ -38,4 +36,3 @@
         </div>
     </div>
 @endsection
-

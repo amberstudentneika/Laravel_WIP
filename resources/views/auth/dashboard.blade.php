@@ -2,9 +2,7 @@
 
 
 @section("content")
-
     <h1 class="text-6xl text-gray-800 text-center">Dashboard</h1>
-
     <div class="md:px-32 py-8 w-full">
         <div class="shadow overflow-hidden rounded border-b border-gray-200">
             <table class="min-w-full bg-white">
@@ -36,4 +34,3 @@
         </div>
     </div>
 @endsection
-
